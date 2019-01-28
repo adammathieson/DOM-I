@@ -44,6 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //nav-item text
 const navItems = document.querySelectorAll('a');
+
 // console.log(navItems[0]);
 navItems[0].textContent = siteContent['nav']['nav-item-1'];
 navItems[1].textContent = siteContent['nav']['nav-item-2'];
@@ -55,6 +56,7 @@ navItems[5].textContent = siteContent['nav']['nav-item-6'];
 //cta h1
 const header1 = document.querySelector('h1');
 header1.textContent = siteContent["cta"]["h1"];
+header1.innerHTML = 'DOM<br>Is<br>Awesome';
 
 //cta img
 const ctaImg = document.getElementById('cta-img');
@@ -90,7 +92,7 @@ const contH4 = document.querySelector('.contact h4');
 contH4.textContent = siteContent['contact']['contact-h4'];
 
 const contactContent = document.querySelectorAll('.contact p');
-contactContent[0].textContent = siteContent['contact']['address'];
+contactContent[0].innerHTML = "123 Way 456 Street<br> Somewhere, USA";
 contactContent[1].textContent = siteContent['contact']['phone'];
 contactContent[2].textContent = siteContent['contact']['email'];
 
@@ -99,3 +101,22 @@ const foot = document.querySelector('footer');
 foot.textContent = siteContent['footer']['copyright'];
 
 
+
+
+//nav new items
+const blog = document.createElement('a');
+blog.textContent = 'Blog';
+
+const nav = document.querySelector('nav');
+nav.appendChild(blog);
+
+const home = document.createElement('a');
+home.textContent = 'Home';
+
+nav.prepend(home);
+
+//style
+const navStyle = document.querySelectorAll('a');
+console.log(navStyle);
+navStyle.forEach(element => element.style.color ='green');
+// navStyle.style.color = 'green';
